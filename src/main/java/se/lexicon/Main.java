@@ -16,6 +16,9 @@ public class Main {
         System.out.println("hashCode is: " + user2.hashCode());
         System.out.println("generatePassword is: " + user2.toString());
 
+        AppUser roll1 = new AppUser("Oskar", "King");
+        roll1.setRole();
+
 
 
 

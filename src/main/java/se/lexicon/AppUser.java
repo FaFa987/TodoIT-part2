@@ -1,5 +1,6 @@
 package se.lexicon;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class AppUser {
@@ -8,13 +9,9 @@ public class AppUser {
     private AppRole role;
 
     public AppUser(String username, String password, AppRole role) {
-        this.generatePassword();
-        this.username = username;
-        this.password = password;
+        this.setUsername(username);
+        this.setPassword(password);
         this.role = role;
-    }
-    public AppUser(String username, String password) {
-        this(username, password, null);
     }
 
     public String getUsername() {
@@ -38,18 +35,25 @@ public class AppUser {
             throw new IllegalArgumentException("Password cannot be null or empty");
         this.password = password;
     }
-    public void setRole(AppRole role) {
+    public void setRole() {
         this.role = role;
     }
+
 
     public boolean equals(AppUser user) {
         return this.username.equals(user.getUsername());
     }
     public int hashCode() {
-        return this.username.hashCode();
+        return Objects.hash(username , role);
     }
+    @Override
     public String toString() {
-        return this.username;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Username: ");
+        sb.append(username);
+        sb.append("Role: ");
+        sb.append(role);
+        return sb.toString();
     }
 
     public void generatePassword() {
