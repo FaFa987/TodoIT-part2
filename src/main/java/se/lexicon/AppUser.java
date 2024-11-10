@@ -14,6 +14,9 @@ public class AppUser {
         this.role = role;
     }
 
+    public AppUser(String peter, String will) {
+    }
+
     public String getUsername() {
         return username;
     }
@@ -38,11 +41,14 @@ public class AppUser {
     public void setRole() {
         this.role = role;
     }
-
-
+    
     public boolean equals(AppUser user) {
+        if(user == null || user.username == null){
+            return false;
+        }
         return this.username.equals(user.getUsername());
     }
+    @Override
     public int hashCode() {
         return Objects.hash(username , role);
     }

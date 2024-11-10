@@ -6,7 +6,7 @@ public enum AppRole {
     //ROLE_APP_ADMIN;
 
 
-    private String username;
+    /*private String username;
     private String password;
     private AppRole() {
 
@@ -20,7 +20,7 @@ public enum AppRole {
     }
     public String getPassword() {
         return password;
-    }
+    }*/
 
 
 

@@ -5,19 +5,15 @@ package se.lexicon;
 public class Main {
     public static void main(String[] args) {
 
-        AppUser user1 = new AppUser("John", "Doe");
-
-        System.out.println("hashCode is: " + user1.hashCode());
-        System.out.println(user1.toString());
-        user1.generatePassword();
-        System.out.println(user1.userInfo());
-        System.out.println("------------");
+        AppUser user1 = new AppUser("John ", "Doe " , AppRole.ROLE_APP_USER);
         AppUser user2 = new AppUser("Peter", "Will");
-        System.out.println("hashCode is: " + user2.hashCode());
-        System.out.println("generatePassword is: " + user2.toString());
 
-        AppUser roll1 = new AppUser("Oskar", "King");
-        roll1.setRole();
+        System.out.println(user1);
+        System.out.println(user1.hashCode());
+        System.out.println(user1.toString());
+        System.out.println(user1.equals(user2));
+
+
 
 
 
